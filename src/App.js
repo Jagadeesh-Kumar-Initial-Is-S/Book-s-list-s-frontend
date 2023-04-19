@@ -15,7 +15,7 @@ function App() {
           <Route exact path='/' element ={<ShowBookList/>} />
           <Route path='/create-book' element={<CreateBook/>}/>
           <Route path='/edit-book/:id' element={<UpdateBookInfo/>} />
-          <Router path='/show-book/:id' element={<ShowBookList/>} />
+          <Router path='/show-book/:id' element={<ShowBookDetails/>} />
         </Routes>
       </div>
     </Router>
