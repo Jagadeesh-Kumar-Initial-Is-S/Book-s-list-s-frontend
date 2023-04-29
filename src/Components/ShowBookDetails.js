@@ -8,27 +8,27 @@ function ShowBookDetails(props) {
 
   const { id } = useParms();
   const navigate = useNavigate();
-  
+
   useEffect(() => {
     axios
-    .get(`https://book-s-list-s-backend.vercel.app/api/books/${id}`)
-    .then((res) => {
-      setBook(res.data);
-    })
-    .catch((err) => {
-      console.log('Eror from ShowBookDetails');
-    });
-  },[id]);
+      .get(`https://book-s-list-s-backend.vercel.app/api/books/${id}`)
+      .then((res) => {
+        setBook(res.data);
+      })
+      .catch((err) => {
+        console.log('Eror from ShowBookDetails');
+      });
+  }, [id]);
 
   const onDeleteClick = (id) => {
     axios
-    .delete(`https://book-s-list-s-backend.vercel.app/api/books/${id}`)
-    .then((res) => {
-      navigate('/');
-    })
-    .catch((err) => {
-      console.log('Error from ShowBookDetails_deleteClick');
-    });
+      .delete(`https://book-s-list-s-backend.vercel.app/api/books/${id}`)
+      .then((res) => {
+        navigate('/');
+      })
+      .catch((err) => {
+        console.log('Error from ShowBookDetails_deleteClick');
+      });
   };
 
   const BookItem = (
@@ -88,19 +88,19 @@ function ShowBookDetails(props) {
           <div className='col-md-10 m-auto'>{BookItem}</div>
           <div className='col-md-6 m-auto'>
             <button
-            type='buttton'
-            className='btn btn-outline-danger btn-lg btn-block'
-            onClick={() => {
-              onDeleteClick(book._id);
-            }}
+              type='buttton'
+              className='btn btn-outline-danger btn-lg btn-block'
+              onClick={() => {
+                onDeleteClick(book._id);
+              }}
             >
               Delete Book
             </button>
           </div>
           <div className='col-md-6 m-auto'>
             <Link
-            to={`/edit-book/${book._id}`}
-            className='btn btn-outline-info btn-lg btn-block'
+              to={`/edit-book/${book._id}`}
+              className='btn btn-outline-info btn-lg btn-block'
             >
               Edit Book
             </Link>
