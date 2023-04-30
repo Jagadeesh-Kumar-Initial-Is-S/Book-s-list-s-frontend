@@ -6,7 +6,7 @@ import axios from 'axios';
 function ShowBookDetails(props) {
   const [book, setBook] = useState({});
 
-  const { id } = useParms();
+  const { id } = useParams();
   const navigate = useNavigate();
 
   useEffect(() => {

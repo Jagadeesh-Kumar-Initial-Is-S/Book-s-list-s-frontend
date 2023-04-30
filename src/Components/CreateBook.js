@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'reacct-router-dom';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 import { useNavigate } from 'react-router-dom';
@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 function CreateBook(props) {
   // Define the state with useState hook
   const navigate = useNavigate();
-  const [book, setBook] = userState({
+  const [book, setBook] = useState({
     title: '',
     isbn: '',
     author: '',
@@ -66,7 +66,7 @@ function CreateBook(props) {
                   name='title'
                   className='form-control'
                   value={book.title}
-                  onChange={onChnge}
+                  onChange={onChange}
                 />
               </div>
               <br />

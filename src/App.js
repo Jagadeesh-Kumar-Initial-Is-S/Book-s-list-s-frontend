@@ -1,12 +1,12 @@
 import logo from './logo.svg';
-import { BrowsweRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Advertisement from './Components/Advertisement';
 
 import CreateBook from './Components/CreateBook';
 import ShowBookList from './Components/ShowBookList';
 import ShowBookDetails from './Components/ShowBookDetails';
-import UpdateBookInfo from './components/UpdateBookInfo';
+import UpdateBookInfo from './Components/UpdateBookInfo';
 
 function App() {
   return (
